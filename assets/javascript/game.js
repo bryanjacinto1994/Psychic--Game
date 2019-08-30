@@ -7,5 +7,15 @@ var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","
 //Make an function the key is run when the use press a key.
 document.onkeyup = function(event){}
 
+//Make a variable for each ID's needed on html.
+var youPressed = document.getElementById();
+var computerPressed = document.getElementById();
+var youWin = document.getElementById();
+var youLose = document.getElementById();
+var guessesLeft = document.getElementById();
+var yourGuesses = document.getElementById();
+
 //Make a variable computerGuess and a value that randomizes letters.
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+// 
