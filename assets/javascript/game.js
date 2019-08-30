@@ -28,8 +28,20 @@ var userGuess = event.key;
 
 //Make if statements for user that shows which key is pressed
 if (userGuess === computerChoices.length){
-    youPressed.textContent = event.key;
+    youPressed.textContent = userGuess;
     computerPressed.textContent = computerGuess;
 
+    if (youPressed.textcontent === computerGuess) {
+        wins++;
+        
+    else {
+        lose++;
+        attempts--;
+    }
+
+
+    
+    
+}
 
 }
