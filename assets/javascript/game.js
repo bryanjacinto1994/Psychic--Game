@@ -18,4 +18,6 @@ var yourGuesses = document.getElementById();
 //Make a variable computerGuess and a value that randomizes letters.
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-// 
+//Make a varible for user when key is pressed via document.onkeyup
+var userGuess = event.key;
+
