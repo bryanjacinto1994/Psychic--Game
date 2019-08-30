@@ -15,9 +15,21 @@ var youLose = document.getElementById();
 var guessesLeft = document.getElementById();
 var yourGuesses = document.getElementById();
 
+//Make a variable for scores
+var wins = 0;
+var lose = 0;
+var attempts = 9;
+
 //Make a variable computerGuess and a value that randomizes letters.
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 //Make a varible for user when key is pressed via document.onkeyup
 var userGuess = event.key;
 
+//Make if statements for user that shows which key is pressed
+if (userGuess === computerChoices.length){
+    youPressed.textContent = event.key;
+    computerPressed.textContent = computerGuess;
+
+
+}
