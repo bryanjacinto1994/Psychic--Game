@@ -12,6 +12,8 @@ var guessMade = [];
 var lettersPressed = lettersPressed;
 
 
+
+
 //Make an function the key is run when the use press a key.
 document.onkeyup = function (event) {
 
@@ -31,13 +33,34 @@ document.onkeyup = function (event) {
     //Make a statement where userGuess keys is equal to computerGuess keys, you win.
     if ((userGuess === computerGuess && computerGuess === userGuess)) {
     wins++;
-    attempts = 9;
+    attempts--;
+    guessMade = [];
         }
     //Make a else if statement where if userGuess keys is not equal to computerGuess keys, you lose.
-    else if (userGuess !== computerGuess) {
-    lose++;
-    attempts = 9;
+     if (userGuess !== computerGuess) {
+    
+    attempts--;
         }
+
+    if (attempts == 0) {
+        attempts = 9;
+        lose++;
+        guessMade = [];
+        
+    }
+
+    if (guessMade.indexOf(userGuess) >= 0){
+
+    }
+    else {
+        guessMade.push(userGuess);
+        document.getElementById("userGuess").innerHTML = guessMade;
+        console.log(guessMade);
+    } 
+
+
+    
+    
 
 
 
@@ -48,16 +71,16 @@ document.onkeyup = function (event) {
     
 
     //Make a variable for each ID's needed on html.
-    var youPressed = document.getElementById("you-pressed");
+    // var youPressed = document.getElementById("you-pressed");
     var computerPressed = document.getElementById("computer-pressed");
     var youWin = document.getElementById("you-win");
     var youLose = document.getElementById("you-lose");
     var guessesLeft = document.getElementById("guesses-left");
     var yourGuesses = document.getElementById("your-guesses");
     //Text-Contents
-    youPressed.textContent = "You Chose: " + userGuess;
+    // youPressed.textContent = "You Chose: " + userGuess;
     computerPressed.textContent = "Your Opponent Chose: " + computerGuess;
-    yourGuesses.textContent = "Your Guesses So Far: " + userGuess;
+    yourGuesses.textContent = "Current Letter Pressed: " + userGuess;
     youWin.textContent = "Your Score: " + wins;
     youLose.textContent = "Losses: " + lose;
     guessesLeft.textContent = "Your Attempts: " + attempts;
